@@ -74,3 +74,55 @@ main {
     transform: scale(0.98);
   }
 }
+main {
+  display: grid;
+  grid-template-columns: 1fr; // Mobile first
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 100%;
+
+  @include responder-a(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responder-a(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+  }
+}
+
+.interactivo {
+  border-radius: $radio-borde-base;
+  transition: $transicion-suave;
+
+  &:hover {
+    @include sombra-suave();
+    transform: translateY(-5px);
+  }
+}
+
+// Ajustes responsivos para secciones
+.contenedor-historia {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include responder-a(tablet) {
+    gap: 30px;
+  }
+}
+
+.fotos-espacios {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+
+  @include responder-a(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include responder-a(desktop) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

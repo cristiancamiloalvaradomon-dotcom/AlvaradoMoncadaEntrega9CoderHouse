@@ -18,3 +18,29 @@
     border-radius: 5px;
   }
 }
+
+%boton-base {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: $radio-borde-boton;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: $transicion-suave; // Animación nativa con transition
+  cursor: pointer;
+}
+
+.link-interactivo {
+  @extend %boton-base;
+  color: $color-primario;
+
+  &:hover,
+  &:focus {
+    color: $color-secundario;
+    transform: translateY(-3px) scale(1.05); // Transformación sutil
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

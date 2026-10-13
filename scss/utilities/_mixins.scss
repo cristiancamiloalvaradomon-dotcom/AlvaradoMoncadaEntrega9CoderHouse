@@ -5,3 +5,16 @@
   align-items: center;
   gap: $gap;
 }
+// Mixin con parámetros para Media Queries (Mobile First)
+@mixin responder-a($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (min-width: 768px) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (min-width: 1024px) { @content; }
+  }
+}
+
+// Mixin con parámetro para sombras personalizadas
+@mixin sombra-suave($color: rgba(13, 71, 161, 0.15)) {
+  box-shadow: 0 8px 16px $color;
+}
